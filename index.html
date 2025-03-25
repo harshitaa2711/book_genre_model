@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Genre Prediction</title>
+</head>
+
+<body>
+
+    <div class="container my-4">
+        <h2 class="my-4 text-center">Book Genre Prediction</h2>
+
+        <!-- Add Image from URL -->
+        <div class="text-center my-4">
+            <img src="https://assets.telegraphindia.com/telegraph/2023/Dec/1701871308_kunzum-jb-edc-2022-01.jpg" alt="Genre Prediction" class="img-fluid">
+        </div>
+
+        <!-- Form -->
+        <form class="my-4" action="/" method="POST">
+            <div class="form-group">
+                <label for="summary">Enter the Summary of the Book</label>
+                <textarea class="form-control" id="summary" name="summary" rows="3"></textarea>
+            </div>
+
+            <!-- Button -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Predict</button>
+            </div>
+        </form>
+
+        {% if showresult %}
+        <div class="container my-4">
+            <div class="alert alert-success" role="alert">
+                <p><strong>Your Summary:</strong> {{ text }}...</p>
+                <p><strong>Predicted Genre:</strong> <span style="color:red; font-size:1rem;">{{ genre }}</span></p>
+                <hr>
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
